@@ -8,7 +8,7 @@ class DBHelper {
       path.join(dbPath, "greatplaces.db"),
       onCreate: (db, version) {
         return db.execute(
-            "CREATE TABLE place (id TEXT PRIMARY KEY, title TEXT, image TEXT)");
+            "CREATE TABLE place (id TEXT PRIMARY KEY, title TEXT, image TEXT, loc_lat REAL, loc_lng REAL, address TEXT)");
       },
       version: 1,
     );
