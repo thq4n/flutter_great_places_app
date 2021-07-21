@@ -64,4 +64,10 @@ class GreatPlaces with ChangeNotifier {
 
     notifyListeners();
   }
+
+  Future<void> deleteItem(Place place) async {
+    await DBHelper.delete("place", place.id);
+    _items.remove(place);
+    notifyListeners();
+  }
 }
